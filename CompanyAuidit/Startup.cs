@@ -29,6 +29,9 @@ namespace CompanyAuidit
             services.AddControllersWithViews();
 
             services.AddDbContext<CompanyAuiditContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Local")));
+
+            services.AddScoped<UserService>();
+            services.AddScoped<ItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
